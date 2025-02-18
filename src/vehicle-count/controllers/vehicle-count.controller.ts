@@ -20,13 +20,13 @@ export class VehicleCountsController {
   @Get()
   async findAll(
     @Query('vehicleType') vehicleType?: string,
-    @Query('startDate') startDate?: string, // Change to string for query params
-    @Query('endDate') endDate?: string,     // Change to string for query params
+    @Query('startDate') startDate?: string, 
+    @Query('endDate') endDate?: string,    
   ) {
     const query: VehicleCountQuery = {
       vehicleType,
-      startDate: startDate ? new Date(startDate) : undefined, // Convert to Date if provided
-      endDate: endDate ? new Date(endDate) : undefined,       // Convert to Date if provided
+      startDate: startDate ? new Date(startDate) : undefined, 
+      endDate: endDate ? new Date(endDate) : undefined,       
     };
     return this.vehicleCountsService.findAll(query);
   }
